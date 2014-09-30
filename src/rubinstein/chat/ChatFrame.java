@@ -47,9 +47,8 @@ public class ChatFrame extends JFrame {
 	}
 	
 	public void appendMessage(String message){
-		myMessage.append(message).append("\n");
+		jPane.setText(myMessage.append(message).append("\n").toString());
 		jPane.repaint();
-		repaint();
 		
 	}
 
