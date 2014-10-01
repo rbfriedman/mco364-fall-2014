@@ -10,13 +10,12 @@ import java.util.Scanner;
 
 public class Client {
 	public static void main(String args[]) throws IOException{
-		Socket socket = new Socket("localhost",8080);
+		Socket socket = new Socket("192.168.117.107",9097);
 		InputStream in = socket.getInputStream();
 		OutputStream out = socket.getOutputStream();
-		out.write("Hello World".getBytes());
+		out.write("Hello!!!! \n".getBytes());
 		out.flush();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		Scanner myScanner = new Scanner(System.in);
 		String line = new String("");
 		while((line = reader.readLine())!=null){
 			out.write(line.getBytes());
