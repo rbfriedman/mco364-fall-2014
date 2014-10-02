@@ -15,8 +15,8 @@ public class MultiChatServer {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = new ServerSocket(9097);
 		List<Socket> sockets = new ArrayList<Socket>();
-		Queue<String> messages = new BlockingQueue<String>();
-		MessageSender sender = new MessageSender(sockets, (BlockingQueue <String>)messages);
+		Queue<String> messages = new LinkedBlockingQueue<String>();
+		MessageSender sender = new MessageSender(sockets, (LinkedBlockingQueue <String>)messages);
 		sender.start();
 		while (true) {
 
